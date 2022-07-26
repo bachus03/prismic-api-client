@@ -1,0 +1,36 @@
+{
+    "description": "Prismic",
+    "version": "1.0.0",
+    "keywords": [
+        "openapitools",
+        "openapi-generator",
+        "openapi",
+        "php",
+        "sdk",
+        "rest",
+        "api"
+    ],
+    "homepage": "https://github.com/bachus03/prismic-api-client",
+    "license": "unlicense",
+    "authors": [
+        {
+            "name": "Marcin Bach",
+            "homepage": ""
+        }
+    ],
+    "require": {
+        "php": "^7.3 || ^8.0",
+        "ext-curl": "*",
+        "ext-json": "*",
+        "ext-mbstring": "*",
+        "guzzlehttp/guzzle": "~6.5.5 || 7.*",
+        "guzzlehttp/psr7": "^2.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^8.0 || ^9.0",
+        "friendsofphp/php-cs-fixer": "^2.12"
+    },
+    "autoload": {
+        "psr-4": { "Prismic\\" : "Prismic/" }
+    },
+}
