@@ -1,7 +1,7 @@
 {
     "description": "Prismic",
     "name": "bachus03/prismic-api-client",
-    "version": "1.0.3",
+    "version": "1.0.4",
     "keywords": [
         "openapitools",
         "openapi-generator",
@@ -24,7 +24,7 @@
         "ext-curl": "*",
         "ext-json": "*",
         "ext-mbstring": "*",
-        "guzzlehttp/guzzle": "~6.5.5 || 7.*",
+        "guzzlehttp/guzzle": "*",
         "guzzlehttp/psr7": "^2.0"
     },
     "require-dev": {
