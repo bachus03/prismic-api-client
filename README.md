@@ -94,5 +94,5 @@ vendor/bin/phpunit
 
 ## About this package
 
-- API version: `1.0.6`
+- API version: `1.0.7`
 
