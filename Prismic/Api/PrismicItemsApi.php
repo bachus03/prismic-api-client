@@ -87,6 +87,11 @@ class PrismicItemsApi
         $this->hostIndex = $hostIndex;
     }
 
+    public function setConfig($config): void{
+
+        $this->config = $config;
+    }
+
     /**
      * Set the host index
      *
@@ -436,6 +441,25 @@ class PrismicItemsApi
             }
         }
 
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        if ($apiKey !== null) {
+            $headers['Authorization'] = $apiKey;
+        }
+        // this endpoint requires HTTP basic authentication
+        if (!empty($this->config->getUsername()) || !(empty($this->config->getPassword()))) {
+            $headers['Authorization'] = 'Basic ' . base64_encode($this->config->getUsername() . ":" . $this->config->getPassword());
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        if ($apiKey !== null) {
+            $headers['Authorization'] = $apiKey;
+        }
+        // this endpoint requires OAuth (access token)
+        if (!empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        }
+
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
@@ -447,6 +471,8 @@ class PrismicItemsApi
             $headerParams,
             $headers
         );
+
+      //  echo $httpBody;
 
         $query = \GuzzleHttp\Psr7\Query::build($queryParams);
         return new Request(
