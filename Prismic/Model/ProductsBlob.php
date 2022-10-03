@@ -47,17 +47,17 @@ class ProductsBlob implements ModelInterface, ArrayAccess, \JsonSerializable
     public const DISCRIMINATOR = null;
 
     /**
-      * The original name of the model.
-      *
-      * @var string
-      */
+     * The original name of the model.
+     *
+     * @var string
+     */
     protected static $openAPIModelName = 'products_blob';
 
     /**
-      * Array of property to type mappings. Used for (de)serialization
-      *
-      * @var string[]
-      */
+     * Array of property to type mappings. Used for (de)serialization
+     *
+     * @var string[]
+     */
     protected static $openAPITypes = [
         'uid' => 'string',
         'brand' => 'string',
@@ -68,7 +68,7 @@ class ProductsBlob implements ModelInterface, ArrayAccess, \JsonSerializable
         'product_link_type' => 'string',
         'stock_status' => 'string',
         'discount_max' => 'string',
-        'discount_mi' => 'string',
+        'discount_min' => 'string',
         'labels' => 'string',
         'regular_price' => 'string',
         'price_max' => 'string',
@@ -77,12 +77,12 @@ class ProductsBlob implements ModelInterface, ArrayAccess, \JsonSerializable
     ];
 
     /**
-      * Array of property to format mappings. Used for (de)serialization
-      *
-      * @var string[]
-      * @phpstan-var array<string, string|null>
-      * @psalm-var array<string, string|null>
-      */
+     * Array of property to format mappings. Used for (de)serialization
+     *
+     * @var string[]
+     * @phpstan-var array<string, string|null>
+     * @psalm-var array<string, string|null>
+     */
     protected static $openAPIFormats = [
         'uid' => null,
         'brand' => null,
@@ -93,7 +93,7 @@ class ProductsBlob implements ModelInterface, ArrayAccess, \JsonSerializable
         'product_link_type' => null,
         'stock_status' => null,
         'discount_max' => null,
-        'discount_mi' => null,
+        'discount_min' => null,
         'labels' => null,
         'regular_price' => null,
         'price_max' => null,
@@ -137,7 +137,7 @@ class ProductsBlob implements ModelInterface, ArrayAccess, \JsonSerializable
         'product_link_type' => 'productLinkType',
         'stock_status' => 'stockStatus',
         'discount_max' => 'discountMax',
-        'discount_mi' => 'discountMi',
+        'discount_min' => 'discountMin',
         'labels' => 'labels',
         'regular_price' => 'regularPrice',
         'price_max' => 'priceMax',
@@ -160,7 +160,7 @@ class ProductsBlob implements ModelInterface, ArrayAccess, \JsonSerializable
         'product_link_type' => 'setProductLinkType',
         'stock_status' => 'setStockStatus',
         'discount_max' => 'setDiscountMax',
-        'discount_mi' => 'setDiscountMi',
+        'discount_min' => 'setdiscountMin',
         'labels' => 'setLabels',
         'regular_price' => 'setRegularPrice',
         'price_max' => 'setPriceMax',
@@ -183,7 +183,7 @@ class ProductsBlob implements ModelInterface, ArrayAccess, \JsonSerializable
         'product_link_type' => 'getProductLinkType',
         'stock_status' => 'getStockStatus',
         'discount_max' => 'getDiscountMax',
-        'discount_mi' => 'getDiscountMi',
+        'discount_min' => 'getdiscountMin',
         'labels' => 'getLabels',
         'regular_price' => 'getRegularPrice',
         'price_max' => 'getPriceMax',
@@ -257,7 +257,7 @@ class ProductsBlob implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->container['product_link_type'] = $data['product_link_type'] ?? null;
         $this->container['stock_status'] = $data['stock_status'] ?? null;
         $this->container['discount_max'] = $data['discount_max'] ?? null;
-        $this->container['discount_mi'] = $data['discount_mi'] ?? null;
+        $this->container['discount_min'] = $data['discount_min'] ?? null;
         $this->container['labels'] = $data['labels'] ?? null;
         $this->container['regular_price'] = $data['regular_price'] ?? null;
         $this->container['price_max'] = $data['price_max'] ?? null;
@@ -506,25 +506,25 @@ class ProductsBlob implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets discount_mi
+     * Gets discount_min
      *
      * @return string|null
      */
-    public function getDiscountMi()
+    public function getdiscountMin()
     {
-        return $this->container['discount_mi'];
+        return $this->container['discount_min'];
     }
 
     /**
-     * Sets discount_mi
+     * Sets discount_min
      *
-     * @param string|null $discount_mi discount_mi
+     * @param string|null $discount_min discount_min
      *
      * @return self
      */
-    public function setDiscountMi($discount_mi)
+    public function setDiscountMin($discount_min)
     {
-        $this->container['discount_mi'] = $discount_mi;
+        $this->container['discount_min'] = $discount_min;
 
         return $this;
     }
@@ -710,7 +710,7 @@ class ProductsBlob implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function jsonSerialize()
     {
-       return ObjectSerializer::sanitizeForSerialization($this);
+        return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
