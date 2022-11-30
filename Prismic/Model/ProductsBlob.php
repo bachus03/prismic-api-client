@@ -65,6 +65,7 @@ class ProductsBlob implements ModelInterface, ArrayAccess, \JsonSerializable
         'sku' => 'string',
         'name' => 'string',
         'slug' => 'string',
+        'breadcrumbs' => '\Prismic\Model\ProductsBlobBreadcrumbs[]',
         'product_link_type' => 'string',
         'stock_status' => 'string',
         'discount_max' => 'string',
@@ -90,6 +91,7 @@ class ProductsBlob implements ModelInterface, ArrayAccess, \JsonSerializable
         'sku' => null,
         'name' => null,
         'slug' => null,
+        'breadcrumbs' => null,
         'product_link_type' => null,
         'stock_status' => null,
         'discount_max' => null,
@@ -134,6 +136,7 @@ class ProductsBlob implements ModelInterface, ArrayAccess, \JsonSerializable
         'sku' => 'sku',
         'name' => 'name',
         'slug' => 'slug',
+        'breadcrumbs' => 'breadcrumbs',
         'product_link_type' => 'productLinkType',
         'stock_status' => 'stockStatus',
         'discount_max' => 'discountMax',
@@ -157,10 +160,11 @@ class ProductsBlob implements ModelInterface, ArrayAccess, \JsonSerializable
         'sku' => 'setSku',
         'name' => 'setName',
         'slug' => 'setSlug',
+        'breadcrumbs' => 'setBreadcrumbs',
         'product_link_type' => 'setProductLinkType',
         'stock_status' => 'setStockStatus',
         'discount_max' => 'setDiscountMax',
-        'discount_min' => 'setdiscountMin',
+        'discount_min' => 'setDiscountMin',
         'labels' => 'setLabels',
         'regular_price' => 'setRegularPrice',
         'price_max' => 'setPriceMax',
@@ -180,10 +184,11 @@ class ProductsBlob implements ModelInterface, ArrayAccess, \JsonSerializable
         'sku' => 'getSku',
         'name' => 'getName',
         'slug' => 'getSlug',
+        'breadcrumbs' => 'getBreadcrumbs',
         'product_link_type' => 'getProductLinkType',
         'stock_status' => 'getStockStatus',
         'discount_max' => 'getDiscountMax',
-        'discount_min' => 'getdiscountMin',
+        'discount_min' => 'getDiscountMin',
         'labels' => 'getLabels',
         'regular_price' => 'getRegularPrice',
         'price_max' => 'getPriceMax',
@@ -254,6 +259,7 @@ class ProductsBlob implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->container['sku'] = $data['sku'] ?? null;
         $this->container['name'] = $data['name'] ?? null;
         $this->container['slug'] = $data['slug'] ?? null;
+        $this->container['breadcrumbs'] = $data['breadcrumbs'] ?? null;
         $this->container['product_link_type'] = $data['product_link_type'] ?? null;
         $this->container['stock_status'] = $data['stock_status'] ?? null;
         $this->container['discount_max'] = $data['discount_max'] ?? null;
@@ -434,6 +440,30 @@ class ProductsBlob implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
+     * Gets breadcrumbs
+     *
+     * @return \Prismic\Model\ProductsBlobBreadcrumbs[]|null
+     */
+    public function getBreadcrumbs()
+    {
+        return $this->container['breadcrumbs'];
+    }
+
+    /**
+     * Sets breadcrumbs
+     *
+     * @param \Prismic\Model\ProductsBlobBreadcrumbs[]|null $breadcrumbs breadcrumbs
+     *
+     * @return self
+     */
+    public function setBreadcrumbs($breadcrumbs)
+    {
+        $this->container['breadcrumbs'] = $breadcrumbs;
+
+        return $this;
+    }
+
+    /**
      * Gets product_link_type
      *
      * @return string|null
@@ -510,7 +540,7 @@ class ProductsBlob implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return string|null
      */
-    public function getdiscountMin()
+    public function getDiscountMin()
     {
         return $this->container['discount_min'];
     }
@@ -736,5 +766,3 @@ class ProductsBlob implements ModelInterface, ArrayAccess, \JsonSerializable
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-
