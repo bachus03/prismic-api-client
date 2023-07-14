@@ -42,7 +42,7 @@ use \Prismic\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class ProductsBlobImage implements ModelInterface, ArrayAccess, \JsonSerializable
+class ProductsBlobImage implements ModelInterface
 {
     public const DISCRIMINATOR = null;
 
@@ -263,7 +263,7 @@ class ProductsBlobImage implements ModelInterface, ArrayAccess, \JsonSerializabl
      *
      * @param integer $offset Offset
      *
-     * @return boolean
+     * @return mixed
      */
     public function offsetExists($offset)
     {

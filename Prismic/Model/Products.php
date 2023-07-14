@@ -42,7 +42,7 @@ use \Prismic\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class Products implements ModelInterface, ArrayAccess, \JsonSerializable
+class Products implements ModelInterface
 {
     public const DISCRIMINATOR = null;
 

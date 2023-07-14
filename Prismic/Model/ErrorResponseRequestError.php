@@ -42,7 +42,7 @@ use \Prismic\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class ErrorResponseRequestError implements ModelInterface, ArrayAccess, \JsonSerializable
+class ErrorResponseRequestError implements ModelInterface
 {
     public const DISCRIMINATOR = null;
 
