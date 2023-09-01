@@ -70,7 +70,7 @@ class ProductsBlob implements ModelInterface
         'stock_status' => 'string',
         'discount_max' => 'string',
         'discount_min' => 'string',
-        'labels' => 'string',
+        'labels' => 'string[]',
         'regular_price' => 'string',
         'price_max' => 'string',
         'price_min' => 'string',
